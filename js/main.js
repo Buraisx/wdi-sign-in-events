@@ -20,13 +20,15 @@ document.addEventListener('DOMContentLoaded',function(e){
 		});
 	});
 
-	inputs.forEach(function(input){
-		input.addEventListener('click',function(eventObject){
-			eventObject.stopPropagation();
-		});
-	});
+	// inputs.forEach(function(input){
+	// 	input.addEventListener('click',function(eventObject){
+	// 		eventObject.stopPropagation();
+	// 	});
+	// });
 
-	modal.addEventListener('click',function(){
-		modal.style.display = 'none';
+	modal.addEventListener('click',function(event){
+		if (event.target.tagName != "INPUT"){
+			modal.style.display = 'none';
+		}
 	});
 });
